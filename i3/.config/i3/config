@@ -25,7 +25,8 @@ client.urgent             $based3   $magenta  $base3   $based3  $magenta
 
 set $mod Mod4
 
-font pango: Hack Nerd Font 14
+font pango: JetBrainsMono Nerd Font:size=10
+# font pango: Hack Nerd Font 14
 # font pango: Iosevka Regular 14
 # font pango: DejaVu Sans Mono 14
 # font pango: FiraCode Nerd Font 14
@@ -197,7 +198,7 @@ exec_always nitrogen --restore
 exec_always --no-stratup-id picom -CGb
 
 # For secondary monitor
-exec_always ~/.screenlayout/dualmonitor.sh
+exec_always --no-startup-id ~/.screenlayout/dualmonitor.sh
 
 # Set the gaps
 gaps inner 2
