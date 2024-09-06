@@ -25,7 +25,7 @@ client.urgent             $based3   $magenta  $base3   $based3  $magenta
 
 set $mod Mod4
 
-font pango: JetBrainsMono Nerd Font:size=10
+# font pango: JetBrainsMono Nerd Font:size=10
 # font pango: Hack Nerd Font 14
 # font pango: Iosevka Regular 14
 # font pango: DejaVu Sans Mono 14
@@ -41,7 +41,7 @@ exec_always --no-startup-id udiskie # Auto mount your moveable disk
 exec --no-startup-id variety
 
 # audio ctrl
-set $refresh_i3status killall -SIGUSR1 i3status
+# set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
