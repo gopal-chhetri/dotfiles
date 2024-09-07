@@ -13,7 +13,8 @@ exec --no-startup-id dex --autostart --environment i3
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id compton -b
 exec_always --no-startup-id udiskie
-exec --no-startup-id variety
+exec_always --no-startup-id dunst
+exec_always --no-startup-id variety
 
 # audio ctrl
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
@@ -44,11 +45,16 @@ bindsym $mod+Ctrl+l exec i3lock-fancy
 bindsym $mod+Shift+e exec rofi -show emoji
 bindsym $mod+c exec rofi -show calc -no-show-match -no-sort
 
+# dunst notification keybinds
+bindsym Mod1+c exec dunstctl close
+bindsym Mod1+Shift+c exec dunstctl close-all
+bindsym Mod1+d exec dunstctl history-pop
+
 ## Clipboard Screenshots
-# bindsym --release Print exec --no-startup-id flameshot gui
-bindsym Control+Shift+s exec --no-startup-id maim | xclip -selection clipboard -t image/png
-bindsym Control+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-bindsym Control+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+bindsym --release Print exec --no-startup-id flameshot gui
+# bindsym Control+Shift+s exec --no-startup-id maim | xclip -selection clipboard -t image/png
+# bindsym Control+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+# bindsym Control+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 # Change the focus window
 bindsym $mod+j focus left
