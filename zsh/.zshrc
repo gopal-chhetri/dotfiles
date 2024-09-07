@@ -87,7 +87,7 @@ plugins=(
 	ruby
 	zsh-autosuggestions 
 	zsh-syntax-highlighting
-	z
+	# z
 
 )
 
