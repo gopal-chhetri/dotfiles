@@ -157,5 +157,5 @@ workspace $ws8 output $fm
 workspace $ws9 output $fm
 workspace $ws10 output $fm
 exec_always --no-startup-id ~/.screenlayout/dualmonitor.sh
-# exec_always --no-startup-id ~/.config/i3/check_dual_setup.sh
+# exec_always --no-startup-id ~/.config/i3/scripts/check_dual_setup.sh
 
