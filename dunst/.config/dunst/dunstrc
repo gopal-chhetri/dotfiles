@@ -231,7 +231,7 @@
     max_icon_size = 20
 
     # Paths to default icons (only necessary when not using recursive icon lookup)
-    icon_path = /usr/share/icons/devicons/png/:~/.config/dunst/icons/apps/:~/.config/dunst/icons/system/
+    icon_path = ~/.config/dunst/icons/apps/:~/.config/dunst/icons/system/
 
     ### History ###
 
@@ -349,7 +349,7 @@
     override_pause_level = 30
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
-    new_icon = bell
+    # new_icon = bell
 
 [urgency_critical]
     background = "#400000"
