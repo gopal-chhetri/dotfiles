@@ -228,7 +228,7 @@
     min_icon_size = 0
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 20
+    max_icon_size = 32
 
     # Paths to default icons (only necessary when not using recursive icon lookup)
     icon_path = ~/.config/dunst/icons/apps/:~/.config/dunst/icons/system/
@@ -354,7 +354,7 @@
     background = "#400000"
     foreground = "#ffffff"
     frame_color = "#ff0000"
-    timeout = 10
+    timeout = 0
     # override_pause_level = 60
     # Icon for notifications with critical urgency, uncomment to enable
     icon = ~/.config/dunst/icons/system/warning.png
