@@ -36,9 +36,6 @@ bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+e exec thunar
 bindsym $mod+Shift+f exec firefox
 bindsym $mod+Shift+b exec brave-beta
-exec_always nitrogen --restore
-exec_always --no-stratup-id picom -CGb
-exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 
 # Close focused window
 bindsym $mod+Shift+q kill
@@ -172,4 +169,8 @@ workspace $ws9 output $fm
 workspace $ws10 output $fm
 exec_always --no-startup-id ~/.screenlayout/dualmonitor.sh
 # exec_always --no-startup-id ~/.config/i3/scripts/check_dual_setup.sh
+
+exec_always nitrogen --restore
+exec_always --no-stratup-id picom -CGb
+exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 
