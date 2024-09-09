@@ -4,7 +4,7 @@
     ### Display ###
 
     # Which monitor should the notifications be displayed on.
-    monitor = $sm
+    monitor = 1
 
     # Display notification on focused monitor.  Possible modes are:
     #   mouse: follow mouse pointer
@@ -339,7 +339,7 @@
     frame_color = "#444b6a"
     timeout = 6
     # Icon for notifications with low urgency, uncomment to enable
-    #default_icon = /path/to/icon
+    icon = ~/.config/dunst/icons/system/bell.png
 
 [urgency_normal]
     background = "#24283b"
@@ -348,8 +348,7 @@
     timeout = 6
     override_pause_level = 30
     # Icon for notifications with normal urgency, uncomment to enable
-    #default_icon = /path/to/icon
-    # new_icon = bell
+    icon = ~/.config/dunst/icons/system/bell.png
 
 [urgency_critical]
     background = "#400000"
@@ -358,7 +357,7 @@
     timeout = 10
     # override_pause_level = 60
     # Icon for notifications with critical urgency, uncomment to enable
-    #default_icon = /path/to/icon
+    icon = ~/.config/dunst/icons/system/warning.png
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.
