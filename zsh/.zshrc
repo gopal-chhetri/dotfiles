@@ -81,10 +81,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
 	git
 	dotenv
-	macos
-	rake
-	rbenv
-	ruby
+	# macos
+	# rake
+	# rbenv
+	# ruby
 	zsh-autosuggestions 
 	zsh-syntax-highlighting
 	# z
@@ -132,6 +132,7 @@ alias thm='cd /home/soy/Gopal/CS/THM'
 alias botsfolio='cd /home/soy/Botsfolio_stuffs/botsfolio_v2/'
 alias botsfolio_ui='cd /home/soy/Botsfolio_stuffs/botsfolio_ui/'
 alias botsfolio_academy='cd /home/soy/Botsfolio_stuffs/botsfolio_academy/'
+alias lf="lf-ueberzug"
 
 alias dsize='du -a | cut -d/ -f2 | sort | uniq -c | sort -nr | head -n -1'
 
@@ -143,17 +144,17 @@ function virtualenv_info {
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/soy/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/soy/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/soy/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/soy/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+# __conda_setup="$('/home/soy/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/home/soy/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "/home/soy/anaconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/home/soy/anaconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
 # <<< conda initialize <<<
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
