@@ -42,6 +42,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Ctrl+l exec i3lock-fancy
 bindsym $mod+Shift+e exec rofi -show emoji
 bindsym $mod+c exec rofi -show calc -no-show-match -no-sort
+bindsym $mod+Shift+p exec ~/.config/polybar/launch_polybar.sh
 
 # dunst notification keybinds
 bindsym Mod1+c exec dunstctl close
