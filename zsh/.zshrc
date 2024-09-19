@@ -174,3 +174,5 @@ export NVM_DIR="$HOME/.nvm"
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
+# To customize prompt, run `p10k configure` or edit ~/backup_dotfiles/p10k_zsh/.p10k.zsh.
+[[ ! -f ~/backup_dotfiles/p10k_zsh/.p10k.zsh ]] || source ~/backup_dotfiles/p10k_zsh/.p10k.zsh
