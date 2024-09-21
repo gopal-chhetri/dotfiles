@@ -11,3 +11,6 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- Make the current file executable (does chmod +x)
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+-- keybind for autosave toggle
+-- vim.api.nvim_set_keymap("n", "<leader>n", ":ASToggle<CR>", {})

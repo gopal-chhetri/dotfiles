@@ -282,11 +282,11 @@ function setIcons {
         WIND="$WIND |"
     fi
     if [ "$UNITS" = "metric" ]; then
-        TEMP_ICON="󰔄"
+        TEMP_ICON="C"
     elif [ "$UNITS" = "imperial" ]; then
-        TEMP_ICON="󰔅"
+        TEMP_ICON="F"
     else
-        TEMP_ICON="󰔆"
+        TEMP_ICON="K"
     fi
     
     TEMP=`echo "$TEMP" | cut -d "." -f 1`
@@ -301,7 +301,8 @@ function setIcons {
 }
 
 function outputCompact {
-    OUTPUT="$WIND %{T$WEATHER_FONT_CODE}%{F$ICON_COLOR}$ICON%{F-}%{T-} $ERR_MSG$COLOR_TEXT_BEGIN$DESCRIPTION$COLOR_TEXT_END| $TEMP"
+    # OUTPUT="$WIND %{T$WEATHER_FONT_CODE}%{F$ICON_COLOR}$ICON%{F-}%{T-} $ERR_MSG$COLOR_TEXT_BEGIN$DESCRIPTION$COLOR_TEXT_END| $TEMP"
+    OUTPUT="$TEMP"
     # echo "Output: $OUTPUT" >> "$HOME/.weather.log"
     echo "$OUTPUT"
 }
