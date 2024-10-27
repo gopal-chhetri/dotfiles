@@ -22,7 +22,6 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
@@ -41,3 +40,15 @@ vim.o.guifont = "Iosevka :h12:#h-slight"
 
 vim.cmd('set mousescroll=hor:10')
 
+-- vim.opt.scrolloff only for bottom of the editor
+-- vim.opt.scrolloff = 5
+vim.api.nvim_create_autocmd("CursorMoved", {
+  group = vim.api.nvim_create_augroup("switchScrolloffTopBottom", { clear = true }),
+  callback = function()
+    if vim.fn.winline() < vim.o.lines/2 then
+      vim.opt_local.scrolloff = 0
+    else
+      vim.opt_local.scrolloff = 5
+    end
+  end,
+})
