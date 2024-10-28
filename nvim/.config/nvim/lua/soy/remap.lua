@@ -2,8 +2,8 @@ vim.g.mapleader = " "
 vim.keymap.set('n', '<leader>h', vim.cmd.Ex)
 
 -- Move lines up and down
-vim.keymap.set('n', '<C-S-Up>', '<cmd>m -2<CR>')
-vim.keymap.set('n', '<C-S-Down>', '<cmd>m +1<CR>')
+vim.keymap.set('n', '<C-S-k>', '<cmd>m -2<CR>')
+vim.keymap.set('n', '<C-S-j>', '<cmd>m +1<CR>')
 
 -- Move highlighted lines up and down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
