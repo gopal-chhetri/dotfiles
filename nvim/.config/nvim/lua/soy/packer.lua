@@ -18,7 +18,7 @@ return require('packer').startup(function(use)
     use { "marko-cerovac/material.nvim" }
     use { "nyoom-engineering/nyoom.nvim"}
 
-    use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    -- use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use ('nvim-treesitter/playground')
     use ('nvim-treesitter/nvim-treesitter-context')
 
@@ -38,6 +38,8 @@ return require('packer').startup(function(use)
     use ( 'mbbill/undotree' ) -- For undo -> view logs
     use ( 'tpope/vim-fugitive' ) -- For git
     use ( 'mfussenegger/nvim-lint' ) -- For nvim-linter
+    use ( 'karb94/neoscroll.nvim' ) -- For smooth scroll
+    use ( 'stevearc/oil.nvim' ) -- for file name edits in vim mode
 
     -- For auto-save
     use({

@@ -160,6 +160,11 @@ _G.packer_plugins = {
     path = "/home/soy/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
     url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
   },
+  ["neoscroll.nvim"] = {
+    loaded = true,
+    path = "/home/soy/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
+    url = "https://github.com/karb94/neoscroll.nvim"
+  },
   ["nui.nvim"] = {
     loaded = true,
     path = "/home/soy/.local/share/nvim/site/pack/packer/start/nui.nvim",
@@ -185,11 +190,6 @@ _G.packer_plugins = {
     path = "/home/soy/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
-  ["nvim-treesitter-context"] = {
-    loaded = true,
-    path = "/home/soy/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
-    url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
-  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/soy/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -199,6 +199,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/soy/.local/share/nvim/site/pack/packer/start/nyoom.nvim",
     url = "https://github.com/nyoom-engineering/nyoom.nvim"
+  },
+  ["oil.nvim"] = {
+    loaded = true,
+    path = "/home/soy/.local/share/nvim/site/pack/packer/start/oil.nvim",
+    url = "https://github.com/stevearc/oil.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
