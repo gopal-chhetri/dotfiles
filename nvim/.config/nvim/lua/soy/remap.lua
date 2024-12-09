@@ -21,8 +21,12 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- Change vim buffer width
-vim.keymap.set("n", "C-w-<", "C-,")
-vim.keymap.set("n", "C-w-<", "C-.")
+vim.keymap.set("n", "<C-,>", "<C-w>>")
+vim.keymap.set("n", "<C-.>", "<C-w><")
+vim.keymap.set("n", "<C-/>", "<C-w>=")
+
+-- open lazygit
+vim.keymap.set("n", "<leader>g", ":LazyGit<CR>")
 
 -- keybind for autosave toggle
 -- vim.api.nvim_set_keymap("n", "<leader>n", ":ASToggle<CR>", {})

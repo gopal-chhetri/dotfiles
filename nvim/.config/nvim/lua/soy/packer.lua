@@ -46,12 +46,17 @@ return require('packer').startup(function(use)
         "okuuva/auto-save.nvim",
         config = function()
             require("auto-save").setup {
-                -- your config goes here
-                -- or just leave it empty :)
             }
         end,
     })
 
+    -- For lazygit
+    use({
+        "kdheepak/lazygit.nvim",
+        requires = {
+            "nvim-lua/plenary.nvim",
+        },
+    })
 
     -- For LSP setup
     use {

@@ -30,9 +30,8 @@ vim.opt.updatetime = 50
 -- vim.opt.colorcolumn = "80"
 
 -- vim.o.guifont = "Hack :h12:#h-slight"
-vim.o.guifont = "Iosevka :h12:#h-slight"
+vim.o.guifont = "JetBrainsMono :h12:#h-slight"
 
--- bish recommended
 -- vim.opt.autocd
 
 -- vim.api.nvim_set_keymap('', '<ScrollWheelLeft>', '<ScrollWheelRight>', { noremap = true, silent = true })
