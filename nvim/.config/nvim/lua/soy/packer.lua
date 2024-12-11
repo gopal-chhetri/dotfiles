@@ -58,6 +58,9 @@ return require('packer').startup(function(use)
         },
     })
 
+    -- For git blame
+    use { 'kessejones/git-blame-line.nvim' }
+
     -- For LSP setup
     use {
         'VonHeikemen/lsp-zero.nvim',
