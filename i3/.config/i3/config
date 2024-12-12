@@ -39,6 +39,7 @@ bindsym $mod+Shift+b exec brave-beta
 
 # Close focused window
 bindsym $mod+Shift+q kill
+bindsym Mod1+Shift+f exec --no-startup-id killall firefox
 bindsym $mod+Ctrl+l exec i3lock-fancy-dualmonitor
 bindsym $mod+Shift+e exec rofi -show emoji
 bindsym $mod+c exec rofi -show calc -no-show-match -no-sort
