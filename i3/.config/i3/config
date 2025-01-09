@@ -99,10 +99,10 @@ set $ws9 "9"
 set $ws10 "10"
 
 # Assign workspaces:
-# assign [title="^Discord$"] $ws9
 assign [class="^discord$"] $ws9
 assign [class="Slack"] $ws10
 assign [class="Spotify"] $ws6
+assign [class="Docker"] $ws5
 
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
