@@ -85,4 +85,7 @@ return require('packer').startup(function(use)
         }
     }
 
+    -- For formatting
+    use { 'nvimtools/none-ls.nvim' }
+
 end)
