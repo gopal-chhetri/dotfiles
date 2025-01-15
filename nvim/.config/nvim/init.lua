@@ -1,1 +1,1 @@
-require('soy')
+require("soy")
