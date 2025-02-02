@@ -17,7 +17,7 @@ require("telescope").setup({
 	pickers = {
 		-- Default configuration for builtin pickers goes here:
 		find_files = {
-            find_command = {'rg', '--files', '--hidden', '-g', '!.git'},
+			find_command = { "rg", "--files", "--hidden", "-g", "!.git" },
 		},
 	},
 	extensions = {
@@ -29,7 +29,7 @@ require("telescope").setup({
 	},
 })
 
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})

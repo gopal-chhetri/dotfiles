@@ -115,7 +115,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"#
 
 # enable vim motion
-bindkey -v
+# bindkey -v
 
 
 # Personal aliases
@@ -125,6 +125,7 @@ alias thm='cd /home/soy/Gopal/CS/THM'
 alias botsfolio='cd /home/soy/Botsfolio_stuffs/botsfolio_v2/'
 alias botsfolio_ui='cd /home/soy/Botsfolio_stuffs/botsfolio_ui/'
 alias botsfolio_academy='cd /home/soy/Botsfolio_stuffs/botsfolio_academy/'
+alias botsfolio_lambda='cd /home/soy/Botsfolio_stuffs/botsfolio_lambda/'
 alias lf="lf-ueberzug"
 
 alias dsize='du -a | cut -d/ -f2 | sort | uniq -c | sort -nr | head -n -1'

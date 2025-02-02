@@ -18,8 +18,7 @@ return require('packer').startup(function(use)
     use { "marko-cerovac/material.nvim" }
     use { "nyoom-engineering/nyoom.nvim"}
 
-    -- use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-    use ('nvim-treesitter/playground')
+    use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use ('nvim-treesitter/nvim-treesitter-context')
 
     use {
@@ -87,5 +86,7 @@ return require('packer').startup(function(use)
 
     -- For formatting
     use { 'nvimtools/none-ls.nvim' }
+    -- For isort
+	use("brentyi/isort.vim")
 
 end)
