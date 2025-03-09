@@ -30,6 +30,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 
 floating_modifier $mod
 bindsym $mod+Return exec kitty
+bindsym $mod2+Return exec kitty
 # bindsym $mod+s exec dmenu_run
 bindsym $mod+s exec rofi -show drun
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
@@ -41,6 +42,7 @@ bindsym $mod+Shift+c exec copyq show
 
 # Close focused window
 bindsym $mod+Shift+q kill
+bindsym $mod2+Shift+q kill
 bindsym Mod1+Shift+f exec --no-startup-id killall firefox
 bindsym $mod+Ctrl+l exec i3lock-fancy-dualmonitor
 bindsym $mod+Shift+e exec rofi -show emoji
