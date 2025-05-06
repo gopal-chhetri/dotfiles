@@ -1,6 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -93,14 +90,14 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -115,7 +112,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"#
 
 # enable vim motion
-# bindkey -v
+bindkey -v
 
 
 # Personal aliases
@@ -127,6 +124,7 @@ alias botsfolio_ui='cd /home/soy/Botsfolio_stuffs/botsfolio_ui/'
 alias botsfolio_academy='cd /home/soy/Botsfolio_stuffs/botsfolio_academy/'
 alias botsfolio_lambda='cd /home/soy/Botsfolio_stuffs/botsfolio_lambda/'
 alias lf="lf-ueberzug"
+alias air='$(go env GOPATH)/bin/air'
 
 alias dsize='du -a | cut -d/ -f2 | sort | uniq -c | sort -nr | head -n -1'
 

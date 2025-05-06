@@ -5,7 +5,7 @@ lsp.preset("recommended")
 lsp.ensure_installed({
 	"eslint",
 	"rust_analyzer",
-	"pyright",
+	"ruff",
 	"lua_ls",
 	"bashls",
 	"gopls",
@@ -21,6 +21,12 @@ lsp.configure("gopls", {
 			},
 			staticcheck = true,
 		},
+	},
+})
+
+lsp.configure("ruff", {
+	settings = {
+		args = {},
 	},
 })
 
