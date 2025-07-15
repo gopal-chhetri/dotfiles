@@ -124,7 +124,7 @@ alias botsfolio_ui='cd /home/soy/Botsfolio_stuffs/botsfolio_ui/'
 alias botsfolio_academy='cd /home/soy/Botsfolio_stuffs/botsfolio_academy/'
 alias botsfolio_lambda='cd /home/soy/Botsfolio_stuffs/botsfolio_lambda/'
 alias lf="lf-ueberzug"
-alias air='$(go env GOPATH)/bin/air'
+alias shrig-solutions='cd /home/soy/shrig-solutions/'
 
 alias dsize='du -a | cut -d/ -f2 | sort | uniq -c | sort -nr | head -n -1'
 
@@ -153,3 +153,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # To customize prompt, run `p10k configure` or edit ~/backup_dotfiles/p10k_zsh/.p10k.zsh.
 [[ ! -f ~/backup_dotfiles/p10k_zsh/.p10k.zsh ]] || source ~/backup_dotfiles/p10k_zsh/.p10k.zsh
+
+GOROOT=/usr/local/go
+GOPATH=~/go
+PATH=$PATH:$GOROOT/bin:$GOPATH/bin

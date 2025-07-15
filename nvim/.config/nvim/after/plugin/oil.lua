@@ -199,3 +199,5 @@
 --     border = "rounded",
 --   },
 -- })
+
+-- vim.keymap.set("n", "-", "<CMD>Oil<CR>", {desc = "Open Oil parent directory"})

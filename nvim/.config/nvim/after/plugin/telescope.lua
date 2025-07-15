@@ -17,7 +17,15 @@ require("telescope").setup({
 	pickers = {
 		-- Default configuration for builtin pickers goes here:
 		find_files = {
-			find_command = { "rg", "--files", "--hidden", "-g", "!.git" },
+			find_command = {
+				"rg",
+				"--files",
+				"--hidden",
+				"-g",
+				"!.git",
+				"--glob",
+				"*.env*",
+			},
 		},
 	},
 	extensions = {

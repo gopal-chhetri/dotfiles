@@ -36,14 +36,14 @@ bindsym $mod+s exec rofi -show drun
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 bindsym $mod+e exec thunar
-bindsym $mod+Shift+f exec firefox
+bindsym $mod+Shift+f exec firefox-beta
 bindsym $mod+Shift+b exec brave-beta
 bindsym $mod+Shift+c exec copyq show
 
 # Close focused window
 bindsym $mod+Shift+q kill
 bindsym $mod2+Shift+q kill
-bindsym Mod1+Shift+f exec --no-startup-id killall firefox
+bindsym Mod1+Shift+f exec --no-startup-id killall firefox-beta
 bindsym $mod+Ctrl+l exec i3lock-fancy-dualmonitor
 bindsym $mod+Shift+e exec rofi -show emoji
 bindsym $mod+c exec rofi -show calc -no-show-match -no-sort
@@ -113,8 +113,8 @@ set $ws19 "19"
 set $ws20 "20"
 
 # Assign workspaces:
-assign [class="^discord$"] $ws12
 assign [class="Slack"] $ws11
+assign [class="^discord$"] $ws12
 assign [class="Spotify"] $ws20
 
 bindsym $mod+1 workspace number $ws1
