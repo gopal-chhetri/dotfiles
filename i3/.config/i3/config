@@ -113,9 +113,10 @@ set $ws19 "19"
 set $ws20 "20"
 
 # Assign workspaces:
-assign [class="Slack"] $ws11
-assign [class="^discord$"] $ws12
+assign [class="^discord$"] $ws11
+assign [class="Slack"] $ws12
 assign [class="Spotify"] $ws20
+assign [class="TopTracker"] $ws19
 
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2

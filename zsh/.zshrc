@@ -157,3 +157,11 @@ export NVM_DIR="$HOME/.nvm"
 GOROOT=/usr/local/go
 GOPATH=~/go
 PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+# pnpm
+export PNPM_HOME="/home/soy/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
