@@ -16,7 +16,8 @@ exec_always --no-startup-id compton -b
 exec_always --no-startup-id udiskie
 exec_always --no-startup-id dunst
 exec_always --no-startup-id variety
-exec systemctl restart NetworkManager
+exec --no-startup-id systemctl restart NetworkManager
+exec_always --no-startup-id xinput set-prop 12 "libinput Tapping Enabled" 1
 
 # audio ctrl
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
@@ -115,8 +116,13 @@ set $ws20 "20"
 # Assign workspaces:
 assign [class="^discord$"] $ws11
 assign [class="Slack"] $ws12
+assign [class="Vivaldi"] $ws13
+assign [class="Postman"] $ws14
+assign [class="Apidog"] $ws14
 assign [class="Spotify"] $ws20
 assign [class="TopTracker"] $ws19
+assign [class="Windsurf"] $ws3
+assign [class="NoSQLBooster"] $ws4
 
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
