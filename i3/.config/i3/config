@@ -12,7 +12,9 @@ set $mod2 Mod1
 # Config about what you wants to run after you starts your system
 exec --no-startup-id dex --autostart --environment i3
 exec_always --no-startup-id nm-applet
-exec_always --no-startup-id compton -b
+# exec_always --no-startup-id compton -b
+exec --no-stratup-id picom
+exec --no-startup-id copyq
 exec_always --no-startup-id udiskie
 exec_always --no-startup-id dunst
 exec_always --no-startup-id variety
@@ -39,7 +41,7 @@ bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+e exec thunar
 bindsym $mod+Shift+f exec firefox-beta
 bindsym $mod+Shift+b exec brave-beta
-bindsym $mod+Shift+c exec copyq show
+bindsym $mod+p exec --no-startup-id copyq toggle
 
 # Close focused window
 bindsym $mod+Shift+q kill
@@ -53,13 +55,11 @@ bindsym $mod+Shift+p exec ~/.config/polybar/launch_polybar.sh
 # dunst notification keybinds
 bindsym Mod1+c exec dunstctl close
 bindsym Mod1+Shift+c exec dunstctl close-all
-bindsym Mod1+d exec dunstctl history-pop
+# bindsym Mod1+d exec dunstctl history-pop
 
 ## Clipboard Screenshots
-bindsym --release Print exec --no-startup-id flameshot gui
-# bindsym Control+Shift+s exec --no-startup-id maim | xclip -selection clipboard -t image/png
-# bindsym Control+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-# bindsym Control+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+# bindsym --release Print exec --no-startup-id flameshot gui
+bindsym Print exec --no-startup-id flameshot gui --raw | xclip -selection clipboard -t image/png
 
 # Change the focus window
 bindsym $mod+j focus left
@@ -121,8 +121,9 @@ assign [class="Postman"] $ws14
 assign [class="Apidog"] $ws14
 assign [class="Spotify"] $ws20
 assign [class="TopTracker"] $ws19
-assign [class="Windsurf"] $ws3
-assign [class="NoSQLBooster"] $ws4
+# assign [class="Windsurf"] $ws3
+assign [class="Antigravity"] $ws3
+assign [class="NoSQLBooster"] $ws5
 
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -224,6 +225,5 @@ exec_always --no-startup-id ~/.screenlayout/dualmonitor.sh
 # exec_always --no-startup-id ~/.config/i3/scripts/check_dual_setup.sh
 
 exec_always nitrogen --restore
-exec_always --no-stratup-id picom -CGb
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 

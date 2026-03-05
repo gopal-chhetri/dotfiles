@@ -104,5 +104,5 @@ return require("packer").startup(function(use)
 	-- For copilot
 	use({ "github/copilot.vim" })
 	-- For session management
-	use({ "rmagatti/auto-session" })
+	-- use({ "rmagatti/auto-session" })
 end)
