@@ -122,6 +122,7 @@ assign [class="Apidog"] $ws14
 assign [class="Spotify"] $ws20
 assign [class="TopTracker"] $ws19
 # assign [class="Windsurf"] $ws3
+assign [class="^Brave"] $ws2
 assign [class="Antigravity"] $ws3
 assign [class="NoSQLBooster"] $ws5
 

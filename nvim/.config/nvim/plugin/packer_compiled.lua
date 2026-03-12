@@ -160,11 +160,6 @@ _G.packer_plugins = {
     path = "/home/soy/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
     url = "https://github.com/kdheepak/lazygit.nvim"
   },
-  ["lsp-zero.nvim"] = {
-    loaded = true,
-    path = "/home/soy/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
-    url = "https://github.com/VonHeikemen/lsp-zero.nvim"
-  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/home/soy/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
