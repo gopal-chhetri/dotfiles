@@ -168,3 +168,8 @@ esac
 
 # opencode
 export PATH=/home/soy/.opencode/bin:$PATH
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/soy/.lmstudio/bin"
+# End of LM Studio CLI section
+

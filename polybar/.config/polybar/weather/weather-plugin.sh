@@ -7,8 +7,10 @@
 APIKEY=`cat $HOME/.config/polybar/weather/.owm-key`
 # APIKEY="9f5b0e6d1ed04af3e5c1883cb39d7006"
 # if you leave these empty location will be picked based on your ip-adres
-CITY_NAME='Kathmandu'
-COUNTRY_CODE='NP'
+CITY_NAME='Hobart'
+COUNTRY_CODE='AUS'
+# CITY_NAME='Kathmandu'
+# COUNTRY_CODE='NP'
 # Desired output language
 LANG="en"
 # UNITS can be "metric", "imperial" or "kelvin". Set KNOTS to "yes" if you

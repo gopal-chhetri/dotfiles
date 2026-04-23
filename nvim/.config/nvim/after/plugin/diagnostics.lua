@@ -92,3 +92,21 @@ vim.api.nvim_create_autocmd('CursorMoved', {
   pattern = '*',
   callback = echo_diagnostic,
 })
+
+-- Open a diag-box to show all the error content
+vim.keymap.set('n', '<leader>d', function()
+  local _, win = vim.diagnostic.open_float(nil, {
+    focusable = true,
+    border = 'rounded',
+    source = 'always',
+    header = '',
+    prefix = '',
+    scope = 'line',
+    width = 80,
+    height = 10,
+    wrap = true,
+  })
+  if win then
+    vim.api.nvim_set_current_win(win)
+  end
+end, { desc = 'Show full diagnostic (focused)' })
