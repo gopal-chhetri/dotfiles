@@ -127,6 +127,7 @@ alias lf="lf-ueberzug"
 alias shrig-solutions='cd /home/soy/shrig-solutions/'
 
 alias dsize='du -a | cut -d/ -f2 | sort | uniq -c | sort -nr | head -n -1'
+alias open="xdg-open"
 
 # Python Virtual env indicator
 plugins=(virtualenv)

@@ -20,6 +20,7 @@ exec_always --no-startup-id dunst
 exec_always --no-startup-id variety
 exec --no-startup-id systemctl restart NetworkManager
 exec_always --no-startup-id xinput set-prop 12 "libinput Tapping Enabled" 1
+exec --no-startup-id xset s off -dpms # disbale screen-timeout
 
 # audio ctrl
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
@@ -28,6 +29,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # control brigtness
+exec --no-startup-id brightnessctl set 100%
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 
@@ -41,7 +43,8 @@ bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+e exec thunar
 bindsym $mod+Shift+f exec firefox-beta
 bindsym $mod+Shift+b exec brave-beta
-bindsym $mod+p exec --no-startup-id copyq toggle
+bindsym $mod+Shift+s exec spotify --audio-api=pulseaudio &
+bindsym $mod+Shift+c exec --no-startup-id copyq toggle
 
 # Close focused window
 bindsym $mod+Shift+q kill
@@ -119,13 +122,13 @@ assign [class="Slack"] $ws12
 assign [class="Vivaldi"] $ws13
 assign [class="Postman"] $ws14
 assign [class="Apidog"] $ws14
+assign [class="NoSQLBooster"] $ws15
 assign [class="Spotify"] $ws20
 assign [class="TopTracker"] $ws19
-assign [class="Antigravity"] $ws2
 assign [class="^Brave"] $ws3
+# assign [class="Antigravity"] $ws4
 # assign [class="Windsurf"] $ws3
-assign [class="^Code"] $ws4
-assign [class="NoSQLBooster"] $ws5
+# assign [class="^Code"] $ws4
 
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -203,26 +206,26 @@ bindsym $mod+r mode "resize"
 # manage workspaces in multiple monwitor setups
 set $fm eDP-1
 set $sm HDMI-1-0
-workspace $ws1 output $sm
-workspace $ws2 output $sm
-workspace $ws3 output $sm
-workspace $ws4 output $sm
-workspace $ws5 output $sm
-workspace $ws6 output $sm
-workspace $ws7 output $sm
-workspace $ws8 output $sm
-workspace $ws9 output $sm
-workspace $ws0 output $sm
-workspace $ws11 output $fm
-workspace $ws12 output $fm
-workspace $ws13 output $fm
-workspace $ws14 output $fm
-workspace $ws15 output $fm
-workspace $ws16 output $fm
-workspace $ws17 output $fm
-workspace $ws18 output $fm
-workspace $ws19 output $fm
-workspace $ws20 output $fm
+workspace $ws1 output $fm
+workspace $ws2 output $fm
+workspace $ws3 output $fm
+workspace $ws4 output $fm
+workspace $ws5 output $fm
+workspace $ws6 output $fm
+workspace $ws7 output $fm
+workspace $ws8 output $fm
+workspace $ws9 output $fm
+workspace $ws0 output $fm
+workspace $ws11 output $sm
+workspace $ws12 output $sm
+workspace $ws13 output $sm
+workspace $ws14 output $sm
+workspace $ws15 output $sm
+workspace $ws16 output $sm
+workspace $ws17 output $sm
+workspace $ws18 output $sm
+workspace $ws19 output $sm
+workspace $ws20 output $sm
 exec_always --no-startup-id ~/.screenlayout/dualmonitor.sh
 # exec_always --no-startup-id ~/.config/i3/scripts/check_dual_setup.sh
 
