@@ -112,7 +112,7 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"#
 
 # enable vim motion
-bindkey -v
+# bindkey -v
 
 
 # Personal aliases
