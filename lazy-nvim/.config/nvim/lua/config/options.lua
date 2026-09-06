@@ -8,6 +8,10 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 -- vim.opt.cmdheight = 1
+vim.opt.textwidth = 0
+vim.opt.formatoptions:remove({ "t", "c" })
+vim.opt.wrap = true
+vim.opt.linebreak = true
 
 vim.opt.smartindent = true
 

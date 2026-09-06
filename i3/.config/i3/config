@@ -13,7 +13,7 @@ set $mod2 Mod1
 exec --no-startup-id dex --autostart --environment i3
 exec_always --no-startup-id nm-applet
 # exec_always --no-startup-id compton -b
-exec --no-stratup-id picom
+# exec --no-stratup-id picom
 exec --no-startup-id copyq
 exec_always --no-startup-id udiskie
 exec_always --no-startup-id dunst
@@ -37,8 +37,8 @@ floating_modifier $mod
 bindsym $mod+Return exec kitty
 bindsym $mod2+Return exec kitty
 # bindsym $mod+s exec dmenu_run
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+s exec rofi -show drun
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 bindsym $mod+e exec thunar
 bindsym $mod+Shift+f exec firefox-beta
@@ -50,7 +50,7 @@ bindsym $mod+Shift+c exec --no-startup-id copyq toggle
 bindsym $mod+Shift+q kill
 bindsym $mod2+Shift+q kill
 bindsym Mod1+Shift+f exec --no-startup-id killall firefox-beta
-bindsym $mod+Ctrl+l exec i3lock-fancy-dualmonitor
+bindsym Ctrl+Shift+l exec i3lock-fancy-dualmonitor
 bindsym $mod+Shift+e exec rofi -show emoji
 bindsym $mod+c exec rofi -show calc -no-show-match -no-sort
 bindsym $mod+Shift+p exec ~/.config/polybar/launch_polybar.sh
@@ -61,8 +61,8 @@ bindsym Mod1+Shift+c exec dunstctl close-all
 # bindsym Mod1+d exec dunstctl history-pop
 
 ## Clipboard Screenshots
-# bindsym --release Print exec --no-startup-id flameshot gui
-bindsym Print exec --no-startup-id flameshot gui --raw | xclip -selection clipboard -t image/png
+bindsym --release Print exec --no-startup-id flameshot gui
+# bindsym Print exec --no-startup-id flameshot gui --raw | xclip -selection clipboard -t image/png
 
 # Change the focus window
 bindsym $mod+j focus left

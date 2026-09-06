@@ -113,16 +113,13 @@ fi
 
 # enable vim motion
 # bindkey -v
+alias vi=vim
 
 
 # Personal aliases
-alias major='cd /home/soy/MAJOR/'
-alias major2='cd /home/soy/MAJOR2'
 alias thm='cd /home/soy/Gopal/CS/THM'
-alias botsfolio='cd /home/soy/Botsfolio_stuffs/botsfolio_v2/'
-alias botsfolio_ui='cd /home/soy/Botsfolio_stuffs/botsfolio_ui/'
-alias botsfolio_academy='cd /home/soy/Botsfolio_stuffs/botsfolio_academy/'
-alias botsfolio_lambda='cd /home/soy/Botsfolio_stuffs/botsfolio_lambda/'
+alias stuffs='cd /home/soy/stuffs/'
+alias soylab='cd /home/soy/stuffs/soylab/'
 alias lf="lf-ueberzug"
 alias shrig-solutions='cd /home/soy/shrig-solutions/'
 
@@ -174,3 +171,10 @@ export PATH=/home/soy/.opencode/bin:$PATH
 export PATH="$PATH:/home/soy/.lmstudio/bin"
 # End of LM Studio CLI section
 
+
+# bun completions
+[ -s "/home/soy/.bun/_bun" ] && source "/home/soy/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
