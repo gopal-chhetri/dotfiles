@@ -59,7 +59,7 @@ bindsym Mod1+Shift+c exec dunstctl close-all
 # bindsym Mod1+d exec dunstctl history-pop
 
 ## Clipboard Screenshots
-bindsym --release Print exec --no-startup-id flameshot gui
+bindsym --release Print exec --no-startup-id flameshot gui --clipboard
 # bindsym Print exec --no-startup-id flameshot gui --raw | xclip -selection clipboard -t image/png
 
 # Change the focus window
