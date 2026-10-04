@@ -87,10 +87,9 @@ return {
 					nowait = true,
 				},
 				mappings = {
-					["<space>"] = {
-						"toggle_node",
-						nowait = false,
-					},
+					-- free <space> so <leader> maps (ff, fg, ...) work inside neo-tree;
+					-- folders still toggle with <cr>
+					["<space>"] = "none",
 					["<2-LeftMouse>"] = "open",
 					["<cr>"] = "open",
 					["<esc>"] = "cancel",
@@ -152,7 +151,7 @@ return {
 						-- ["/"] = "fuzzy_finder",
 						["D"] = "fuzzy_finder_directory",
 						["#"] = "fuzzy_sorter",
-						-- ["f"] = "filter_on_submit",
+						["f"] = "none", -- no filter search popup on f
 						["<c-x>"] = "clear_filter",
 						["[g"] = "prev_git_modified",
 						["]g"] = "next_git_modified",
