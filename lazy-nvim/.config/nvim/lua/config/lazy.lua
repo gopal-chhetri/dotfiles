@@ -20,8 +20,8 @@ require("lazy").setup({
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
 
 		-- extras: snacks is the current LazyVim default picker/explorer —
-		-- these two opt into fzf-lua + neo-tree to match your existing keymaps
-		{ import = "lazyvim.plugins.extras.editor.fzf" },
+		-- these two opt into telescope + neo-tree to match your existing keymaps
+		{ import = "lazyvim.plugins.extras.editor.telescope" },
 		{ import = "lazyvim.plugins.extras.editor.neo-tree" },
 
 		-- extra: copilot.lua, ghost-text integrates with blink.cmp
@@ -36,7 +36,7 @@ require("lazy").setup({
 		version = false,
 	},
 	install = { colorscheme = { "catppuccin" } },
-	checker = { enabled = true },
+	checker = { enabled = true, notify = false },
 	performance = {
 		rtp = {
 			disabled_plugins = {

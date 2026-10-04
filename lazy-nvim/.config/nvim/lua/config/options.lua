@@ -32,6 +32,6 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.o.guifont = "JetBrainsMono :h12:#h-slight"
+vim.o.guifont = "JetBrainsMono Nerd Font Mono:h12:#h-slight"
 
 vim.cmd("set mousescroll=hor:10")

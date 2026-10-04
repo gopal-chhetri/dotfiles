@@ -10,28 +10,28 @@ return {
         { "<leader>a", mark.add_file, desc = "Harpoon: add file" },
         { "<C-e>", ui.toggle_quick_menu, desc = "Harpoon: quick menu" },
         {
-          "<C-1>",
+          "<leader>1",
           function()
             ui.nav_file(1)
           end,
           desc = "Harpoon: file 1",
         },
         {
-          "<C-2>",
+          "<leader>2",
           function()
             ui.nav_file(2)
           end,
           desc = "Harpoon: file 2",
         },
         {
-          "<C-3>",
+          "<leader>3",
           function()
             ui.nav_file(3)
           end,
           desc = "Harpoon: file 3",
         },
         {
-          "<C-4>",
+          "<leader>4",
           function()
             ui.nav_file(4)
           end,

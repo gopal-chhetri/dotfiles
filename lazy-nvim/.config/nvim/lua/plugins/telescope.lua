@@ -1,50 +1,53 @@
 return {
-	-- {
-	-- 	"nvim-telescope/telescope.nvim",
-	-- 	keys = {
-	-- 		{
-	-- 			"<leader>ff",
-	-- 			"<cmd>Telescope find_files<cr>",
-	-- 			desc = "Find Files",
-	-- 		},
-	-- 		{
-	-- 			"<leader>fg",
-	-- 			"<cmd>Telescope live_grep<cr>",
-	-- 			desc = "Live Grep",
-	-- 		},
-	-- 		{
-	-- 			"<leader>fb",
-	-- 			"<cmd>Telescope buffers<cr>",
-	-- 			desc = "Find Buffers",
-	-- 		},
-	-- 		{
-	-- 			"<leader>fh",
-	-- 			"<cmd>Telescope help_tags<cr>",
-	-- 			desc = "Help Tags",
-	-- 		},
-	-- 	},
-	--
-	-- 	opts = {
-	-- 		defaults = {
-	-- 			mappings = {
-	-- 				i = {
-	-- 					["<C-h>"] = "which_key",
-	-- 				},
-	-- 			},
-	-- 		},
-	--
-	-- 		pickers = {
-	-- 			find_files = {
-	-- 				find_command = {
-	-- 					"rg",
-	-- 					"--files",
-	-- 					"--hidden",
-	-- 					"--no-ignore",
-	-- 					"-g",
-	-- 					"!.git",
-	-- 				},
-	-- 			},
-	-- 		},
-	-- 	},
-	-- },
+	{
+		"nvim-telescope/telescope.nvim",
+		keys = {
+			{
+				"<leader>ff",
+				"<cmd>Telescope find_files<cr>",
+				desc = "Find Files",
+			},
+			{
+				"<leader>fg",
+				"<cmd>Telescope live_grep<cr>",
+				desc = "Live Grep",
+			},
+			{
+				"<leader>fb",
+				"<cmd>Telescope buffers<cr>",
+				desc = "Find Buffers",
+			},
+			{
+				"<leader>fh",
+				"<cmd>Telescope help_tags<cr>",
+				desc = "Help Tags",
+			},
+		},
+
+		opts = {
+			defaults = {
+				mappings = {
+					i = {
+						["<C-h>"] = "which_key",
+					},
+				},
+			},
+
+			pickers = {
+				find_files = {
+					find_command = {
+						"rg",
+						"--files",
+						"--hidden",
+						"--no-ignore",
+						"-g",
+						"!.git",
+					},
+				},
+				live_grep = {
+					additional_args = { "--hidden", "--no-ignore", "-g", "!.git" },
+				},
+			},
+		},
+	},
 }

@@ -36,14 +36,14 @@ return {
 			color_overrides = {},
 			custom_highlights = {},
 			-- CHANGED from original: cmp -> blink_cmp, nvimtree -> neotree,
-			-- telescope -> fzf. Your original set integrations for plugins you're
+			-- telescope kept. Your original set integrations for plugins you're
 			-- no longer running (nvim-cmp, nvim-tree); this points them at what
 			-- you actually chose.
 			integrations = {
 				blink_cmp = true,
 				gitsigns = true,
 				neotree = true,
-				fzf = true,
+				telescope = { enabled = true },
 				treesitter = true,
 				notify = false,
 				mini = {

@@ -1,11 +1,11 @@
 #!/bin/sh
 
-# Power menu script using tofi
+# Power menu script using rofi
 
 CHOSEN=$(printf "Lock\nSuspend\nReboot\nShutdown" | rofi -dmenu -i -theme-str '@import ".config/rofi/catppuccin-mocha"')
 
 case "$CHOSEN" in
-	"Lock") i3lock-fancy ;;
+	"Lock") i3lock-fancy-dualmonitor ;;
 	"Suspend") systemctl suspend-then-hibernate ;;
 	"Reboot") reboot ;;
 	"Shutdown") poweroff ;;

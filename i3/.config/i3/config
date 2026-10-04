@@ -2,7 +2,7 @@
 set $mod Mod4
 set $mod2 Mod1
 
-# font pango: JetBrainsMono Nerd Font:size=10
+font pango:JetBrainsMono Nerd Font 10
 # font pango: Hack Nerd Font 14
 # font pango: Iosevka Regular 14
 # font pango: DejaVu Sans Mono 14
@@ -11,22 +11,20 @@ set $mod2 Mod1
 
 # Config about what you wants to run after you starts your system
 exec --no-startup-id dex --autostart --environment i3
-exec_always --no-startup-id nm-applet
+exec --no-startup-id nm-applet
 # exec_always --no-startup-id compton -b
 # exec --no-stratup-id picom
 exec --no-startup-id copyq
-exec_always --no-startup-id udiskie
-exec_always --no-startup-id dunst
-exec_always --no-startup-id variety
-exec --no-startup-id systemctl restart NetworkManager
-exec_always --no-startup-id xinput set-prop 12 "libinput Tapping Enabled" 1
+exec --no-startup-id udiskie
+exec --no-startup-id dunst
+exec_always --no-startup-id xinput set-prop "MSFT0002:00 04F3:31AD Touchpad" "libinput Tapping Enabled" 1
 exec --no-startup-id xset s off -dpms # disbale screen-timeout
 
 # audio ctrl
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.local/bin/volume up
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.local/bin/volume down
+bindsym XF86AudioMute exec --no-startup-id ~/.local/bin/volume mute
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # control brigtness
 exec --no-startup-id brightnessctl set 100%
@@ -50,7 +48,7 @@ bindsym $mod+Shift+c exec --no-startup-id copyq toggle
 bindsym $mod+Shift+q kill
 bindsym $mod2+Shift+q kill
 bindsym Mod1+Shift+f exec --no-startup-id killall firefox-beta
-bindsym Ctrl+Shift+l exec i3lock-fancy-dualmonitor
+bindsym Mod1+Shift+l exec i3lock-fancy-dualmonitor
 bindsym $mod+Shift+e exec rofi -show emoji
 bindsym $mod+c exec rofi -show calc -no-show-match -no-sort
 bindsym $mod+Shift+p exec ~/.config/polybar/launch_polybar.sh
@@ -88,8 +86,8 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # Disable the titlebar
-new_window pixel 0
-new_float pixel 0
+default_border pixel 0
+default_floating_border pixel 0
 # Set the gaps
 gaps inner 2
 gaps outer 2
@@ -215,7 +213,7 @@ workspace $ws6 output $fm
 workspace $ws7 output $fm
 workspace $ws8 output $fm
 workspace $ws9 output $fm
-workspace $ws0 output $fm
+workspace $ws10 output $fm
 workspace $ws11 output $sm
 workspace $ws12 output $sm
 workspace $ws13 output $sm
@@ -226,9 +224,8 @@ workspace $ws17 output $sm
 workspace $ws18 output $sm
 workspace $ws19 output $sm
 workspace $ws20 output $sm
-exec_always --no-startup-id ~/.screenlayout/dualmonitor.sh
-# exec_always --no-startup-id ~/.config/i3/scripts/check_dual_setup.sh
+exec_always --no-startup-id sh -c 'xrandr -q | grep -q "^HDMI-1-0 connected" && ~/.screenlayout/dualmonitor.sh || ~/.screenlayout/single_monitor.sh'
 
-exec_always nitrogen --restore
+exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
 

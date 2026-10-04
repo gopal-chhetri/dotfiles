@@ -4,8 +4,7 @@
 
 # API settings ________________________________________________________________
 
-APIKEY=`cat $HOME/.config/polybar/weather/.owm-key`
-# APIKEY="9f5b0e6d1ed04af3e5c1883cb39d7006"
+APIKEY=$(cat "$HOME/.config/polybar/weather/.owm-key")
 # if you leave these empty location will be picked based on your ip-adres
 CITY_NAME='Hobart'
 COUNTRY_CODE='AUS'

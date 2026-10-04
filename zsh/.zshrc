@@ -117,20 +117,14 @@ alias vi=vim
 
 
 # Personal aliases
-alias thm='cd /home/soy/Gopal/CS/THM'
-alias stuffs='cd /home/soy/stuffs/'
-alias soylab='cd /home/soy/stuffs/soylab/'
-alias lf="lf-ueberzug"
-alias shrig-solutions='cd /home/soy/shrig-solutions/'
+alias thm='cd $HOME/Gopal/CS/THM'
+alias stuffs='cd $HOME/stuffs/'
+alias soylab='cd $HOME/stuffs/soylab/'
+alias lf="$HOME/.config/lf-ueberzug/lf-ueberzug"
+alias shrig-solutions='cd $HOME/shrig-solutions/'
 
 alias dsize='du -a | cut -d/ -f2 | sort | uniq -c | sort -nr | head -n -1'
 alias open="xdg-open"
-
-# Python Virtual env indicator
-plugins=(virtualenv)
-function virtualenv_info {
-    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
-}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -149,15 +143,12 @@ export NVM_DIR="$HOME/.nvm"
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
-# To customize prompt, run `p10k configure` or edit ~/backup_dotfiles/p10k_zsh/.p10k.zsh.
-[[ ! -f ~/backup_dotfiles/p10k_zsh/.p10k.zsh ]] || source ~/backup_dotfiles/p10k_zsh/.p10k.zsh
-
-GOROOT=/usr/local/go
-GOPATH=~/go
-PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 # pnpm
-export PNPM_HOME="/home/soy/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -165,15 +156,15 @@ esac
 # pnpm end
 
 # opencode
-export PATH=/home/soy/.opencode/bin:$PATH
+export PATH=$HOME/.opencode/bin:$PATH
 
 # Added by LM Studio CLI (lms)
-export PATH="$PATH:/home/soy/.lmstudio/bin"
+export PATH="$PATH:$HOME/.lmstudio/bin"
 # End of LM Studio CLI section
 
 
 # bun completions
-[ -s "/home/soy/.bun/_bun" ] && source "/home/soy/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
