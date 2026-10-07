@@ -23,14 +23,11 @@ set scrolloff 10
 # Use the `dim` attribute instead of underline for the cursor in the preview pane
 set cursorpreviewfmt "\033[7;2m"
 
-# use enter for shell commands
-map <enter> shell
 
 # show the result of execution of previous commands
 map ` !true
 
-# execute current file (must be executable)
-map x $$f
+# execute current file (must be executable; x is cut, below)
 map X !$f
 
 # dedicated keys for file opener actions
@@ -131,7 +128,6 @@ map x cut
 map y copy
 map <enter> open
 map R reload
-map a mkfile
 
 # Movements
 map gD cd ~/Downloads
