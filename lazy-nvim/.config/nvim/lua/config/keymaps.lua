@@ -1,5 +1,3 @@
-vim.g.mapleader = " "
-
 vim.keymap.set("n", "<leader>h", vim.cmd.Ex)
 
 -- Move lines up and down
@@ -18,10 +16,11 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({ "n", "v" }, "<C-S-y>", [["+y]])
-vim.keymap.set("n", "<C-S>Y", [["+Y]])
+vim.keymap.set("n", "<C-S-Y>", [["+Y]])
 
 -- Make the current file executable (does chmod +x)
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+-- (not <leader>x: that's LazyVim's trouble/quickfix group)
+vim.keymap.set("n", "<leader>cx", "<cmd>!chmod +x %<CR>", { silent = true, desc = "chmod +x file" })
 
 -- Change vim buffer width
 vim.keymap.set("n", "<C-,>", "<C-w>>")
@@ -34,8 +33,11 @@ vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 -- git-blame-line (from after/plugin/git-blame-line.lua)
 vim.keymap.set("n", "<leader>gb", vim.cmd.GitBlameLineToggle)
 
--- manual format bind (from after/plugin/null-ls.lua) — kept alongside the
-vim.keymap.set("n", "<leader>ft", vim.lsp.buf.format, {})
+-- manual format bind (from after/plugin/null-ls.lua); goes through conform so
+-- black/isort/gofumpt run, not just the LSP formatter
+vim.keymap.set("n", "<leader>ft", function()
+	LazyVim.format({ force = true })
+end, { desc = "Format buffer" })
 
 -- move between tabs
 vim.keymap.set("n", "<C-l>", "<cmd>bnext<cr>", { desc = "Next Tab" })

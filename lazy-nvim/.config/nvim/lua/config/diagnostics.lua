@@ -85,6 +85,7 @@ end
 
 -- Set up an autocommand to call `echo_diagnostic` on cursor movement.
 vim.api.nvim_create_autocmd("CursorMoved", {
+	group = vim.api.nvim_create_augroup("soy-echo-diagnostic", { clear = true }),
 	pattern = "*",
 	callback = echo_diagnostic,
 })

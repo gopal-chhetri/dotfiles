@@ -93,7 +93,7 @@ return {
 					["<2-LeftMouse>"] = "open",
 					["<cr>"] = "open",
 					["<esc>"] = "cancel",
-					["P"] = { "toggle_preview", config = { use_float = true, use_image_nvim = true } },
+					["P"] = { "toggle_preview", config = { use_float = true } },
 					["l"] = "focus_preview",
 					["S"] = "open_split",
 					["s"] = "open_vsplit",

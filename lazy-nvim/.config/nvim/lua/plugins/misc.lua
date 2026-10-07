@@ -9,7 +9,8 @@ return {
   {
     "karb94/neoscroll.nvim",
     opts = {
-      mappings = { "<C-u>", "<C-d>", "<C-y>", "<C-e>", "zt", "zz", "zb" },
+      -- <C-e> is harpoon's quick menu; <C-d>/<C-u> are remapped to <C-d>zz in keymaps.lua
+      mappings = { "<C-y>", "zt", "zz", "zb" },
       hide_cursor = true,
       stop_eof = true,
       respect_scrolloff = false,
