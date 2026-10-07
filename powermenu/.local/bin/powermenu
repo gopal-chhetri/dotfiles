@@ -2,7 +2,7 @@
 
 # Power menu script using rofi
 
-CHOSEN=$(printf "Lock\nSuspend\nReboot\nShutdown" | rofi -dmenu -i -theme-str '@import ".config/rofi/catppuccin-mocha"')
+CHOSEN=$(printf "Lock\nSuspend\nReboot\nShutdown" | rofi -dmenu -i -theme ~/.config/rofi/catppuccin-mocha.rasi)
 
 case "$CHOSEN" in
 	"Lock") i3lock-fancy-dualmonitor ;;

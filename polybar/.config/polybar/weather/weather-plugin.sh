@@ -11,7 +11,7 @@ COUNTRY_CODE='AUS'
 # CITY_NAME='Kathmandu'
 # COUNTRY_CODE='NP'
 # Desired output language
-LANG="en"
+OWM_LANG="en"
 # UNITS can be "metric", "imperial" or "kelvin". Set KNOTS to "yes" if you
 # want the wind in knots:
 
@@ -112,7 +112,7 @@ if [ $UNITS = "kelvin" ]; then
 else
     UNIT_URL="&units=$UNITS"
 fi
-URL="api.openweathermap.org/data/2.5/weather?appid=$APIKEY$UNIT_URL&lang=$LANG&q=$(echo $CITY_NAME| sed 's/ /%20/g'),${COUNTRY_CODE}"
+URL="https://api.openweathermap.org/data/2.5/weather?appid=$APIKEY$UNIT_URL&lang=$OWM_LANG&q=$(echo $CITY_NAME| sed 's/ /%20/g'),${COUNTRY_CODE}"
 
 function getData {
     ERROR=0
