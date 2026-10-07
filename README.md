@@ -18,12 +18,11 @@ stow -D i3       # unlink
 | `rofi` | `~/.config/rofi` |
 | `dunst` | `~/.config/dunst` |
 | `kitty` | `~/.config/kitty` |
-| `picom` | `~/.config/picom` |
+| `picom` | `~/.config/picom` (kept for reference; not started by i3) |
 | `flameshot` | `~/.config/flameshot` |
 | `autorandr` | `~/.config/autorandr` |
 | `lf`, `lf-ueberzug` | `~/.config/lf`, `~/.config/lf-ueberzug` |
-| `lazy-nvim` | `~/.config/nvim` (current) |
-| `packer-nvim` | `~/.config/nvim` (old; don't stow both) |
+| `lazy-nvim` | `~/.config/nvim` |
 | `zsh`, `p10k_zsh` | `~/.zshrc`, `~/.p10k.zsh` |
 | `nvidia-settings` | `~/.nvidia-settings-rc` |
 | `screenlayout` | `~/.screenlayout` |
@@ -34,7 +33,7 @@ stow -D i3       # unlink
 These programs read from `/etc`, so `stow` into `$HOME` does nothing useful:
 
 - `lightdm` goes in `/etc/lightdm/`
-- `ly` goes in `/etc/ly/`
+- `ly` goes in `/etc/ly/` (kept for reference; not installed)
 - `xorg/X11/xorg.conf` goes in `/etc/X11/xorg.conf`
 
 Copy them by hand, or link them with something like `sudo stow -t /etc --dir=lightdm/.config lightdm`.
