@@ -41,7 +41,7 @@ bindsym $mod+s exec rofi -show drun
 bindsym $mod+e exec thunar
 bindsym $mod+Shift+f exec firefox-beta
 bindsym $mod+Shift+b exec brave-beta
-bindsym $mod+Shift+s exec spotify --audio-api=pulseaudio
+bindsym $mod+Shift+s exec spotify
 bindsym $mod+Shift+c exec --no-startup-id copyq toggle
 
 # Close focused window
