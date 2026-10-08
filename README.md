@@ -49,4 +49,4 @@ The polybar weather module reads an OpenWeatherMap key from `~/.config/polybar/w
 
 ## Dependencies
 
-i3, polybar, rofi, dunst, kitty, nitrogen, copyq, udiskie, nm-applet, dex, flameshot, brightnessctl, wireplumber (`wpctl`), pactl, i3lock-fancy-dualmonitor, xrandr, autorandr, lf, ueberzug, jq, bc, curl, oh-my-zsh, powerlevel10k, JetBrainsMono Nerd Font.
+i3, polybar, rofi, dunst, kitty, nitrogen, copyq, udiskie, nm-applet, dex, flameshot, brightnessctl, pipewire, pipewire-pulse (`pactl`), wireplumber, i3lock-fancy-dualmonitor, xrandr, autorandr, lf, ueberzug, jq, bc, curl, oh-my-zsh, powerlevel10k, JetBrainsMono Nerd Font.

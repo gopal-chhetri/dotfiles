@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Increment, decrement, or mute the volume using pactl and send a notification
-# (pactl talks to PulseAudio, or to PipeWire through pipewire-pulse)
+# (pactl talks to PipeWire through pipewire-pulse)
 
 SINK=@DEFAULT_SINK@
 MAX=200
