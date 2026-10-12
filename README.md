@@ -27,6 +27,7 @@ stow -D i3       # unlink
 | `nvidia-settings` | `~/.nvidia-settings-rc` |
 | `screenlayout` | `~/.screenlayout` |
 | `powermenu`, `volume`, `wifimenu` | `~/.local/bin` |
+| `cleanup` | `~/.local/bin`, `~/.config/systemd/user` |
 
 ## System packages (not for plain `stow`)
 
@@ -34,9 +35,22 @@ These programs read from `/etc`, so `stow` into `$HOME` does nothing useful:
 
 - `lightdm` goes in `/etc/lightdm/`
 - `ly` goes in `/etc/ly/` (kept for reference; not installed)
-- `xorg/X11/xorg.conf` goes in `/etc/X11/xorg.conf`
+- `xorg/X11/xorg.conf.d/*.conf` go in `/etc/X11/xorg.conf.d/` (no full `xorg.conf`: the hybrid AMD + NVIDIA setup autoconfigures)
 
 Copy them by hand, or link them with something like `sudo stow -t /etc --dir=lightdm/.config lightdm`.
+
+## Disk cleanup
+
+`cleanup` clears caches that rebuild on their own (yay build files, Go, pnpm, npm). It runs weekly from a user timer:
+
+```sh
+stow cleanup
+systemctl --user daemon-reload
+systemctl --user enable --now cleanup-caches.timer
+cleanup-caches --dry-run   # show sizes without deleting
+```
+
+`cleanup-system` is a one-time root script: it trims the pacman cache, removes orphan packages (keeping `rust`, `cmake`, `git-lfs`, `nasm`) and makes the weekly `paccache.timer` keep one old version instead of three. Run it with `sudo ~/.local/bin/cleanup-system`.
 
 ## Secrets
 

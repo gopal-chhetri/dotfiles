@@ -1,0 +1,6 @@
+[Unit]
+Description=Clear yay, Go, pnpm and npm caches
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/cleanup-caches

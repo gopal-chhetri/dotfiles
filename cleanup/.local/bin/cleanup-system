@@ -1,0 +1,39 @@
+#! /bin/bash
+# One-time system cleanup: trim the pacman cache, remove orphan packages,
+# and make the weekly paccache.timer keep only one old version.
+# Run with: sudo ~/.local/bin/cleanup-system
+set -euo pipefail
+
+if [ "$EUID" -ne 0 ]; then
+  echo "Run as root: sudo $0" >&2
+  exit 1
+fi
+
+# tools used directly, not just as build deps; keep them off the orphan list
+keep=(rust cmake git-lfs nasm)
+
+echo "/ free before: $(df -h --output=avail / | tail -1)"
+
+paccache -rk1
+paccache -ruk0
+
+for p in "${keep[@]}"; do
+  pacman -Q "$p" &>/dev/null && pacman -D --asexplicit "$p" >/dev/null
+done
+
+orphans=$(pacman -Qdtq || true)
+if [ -n "$orphans" ]; then
+  echo "Removing orphans:" $orphans
+  pacman -Rns --noconfirm $orphans
+fi
+
+mkdir -p /etc/systemd/system/paccache.service.d
+cat > /etc/systemd/system/paccache.service.d/keep-one.conf <<'EOF'
+[Service]
+ExecStart=
+ExecStart=/usr/bin/paccache -rk1
+ExecStart=/usr/bin/paccache -ruk0
+EOF
+systemctl daemon-reload
+
+echo "/ free after:  $(df -h --output=avail / | tail -1)"

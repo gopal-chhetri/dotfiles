@@ -1,0 +1,42 @@
+#! /bin/bash
+# Clear caches that rebuild on their own: yay build clones, Go, pnpm, npm.
+# Run weekly by cleanup-caches.timer. --dry-run only prints sizes.
+set -euo pipefail
+
+dry=0
+[ "${1:-}" = "--dry-run" ] && dry=1
+
+# systemd user units don't get the nvm PATH from .zshrc
+for d in "$HOME"/.nvm/versions/node/*/bin; do
+  [ -d "$d" ] && PATH="$d:$PATH"
+done
+export PATH
+
+size() { du -sh "$1" 2>/dev/null | cut -f1 || echo 0; }
+
+step() {
+  local name=$1 dir=$2
+  shift 2
+  echo "$name ($(size "$dir"))"
+  [ "$dry" -eq 1 ] || "$@" || echo "  failed, skipping"
+}
+
+echo "/home free before: $(df -h --output=avail /home | tail -1)"
+
+if [ -d "$HOME/.cache/yay" ]; then
+  step "yay build files" "$HOME/.cache/yay" find "$HOME/.cache/yay" -mindepth 1 -maxdepth 1 -exec rm -rf {} +
+fi
+
+if command -v go >/dev/null; then
+  step "go build + module cache" "$HOME/go/pkg/mod" go clean -cache -modcache
+fi
+
+if command -v pnpm >/dev/null; then
+  step "pnpm store (unused packages)" "$HOME/.local/share/pnpm" pnpm store prune
+fi
+
+if command -v npm >/dev/null; then
+  step "npm cache" "$HOME/.npm" npm cache clean --force
+fi
+
+echo "/home free after:  $(df -h --output=avail /home | tail -1)"

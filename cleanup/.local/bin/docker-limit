@@ -1,0 +1,45 @@
+#! /bin/bash
+# One-time setup: cap Docker at 16G by putting /var/lib/docker on a
+# 16G ext4 image file. The file is sparse, so it only takes what Docker uses.
+# Run with: sudo ~/.local/bin/docker-limit
+set -euo pipefail
+
+if [ "$EUID" -ne 0 ]; then
+  echo "Run as root: sudo $0" >&2
+  exit 1
+fi
+
+img=/var/lib/docker.img
+dir=/var/lib/docker
+size=16G
+
+if mountpoint -q "$dir"; then
+  echo "$dir is already a mount, nothing to do"
+  exit 0
+fi
+
+systemctl stop docker.socket docker.service
+
+truncate -s "$size" "$img"
+mkfs.ext4 -q -F "$img"
+
+# keep the old data until the copy is verified; delete it yourself after
+mv "$dir" "$dir.old"
+mkdir "$dir"
+# discard: freed blocks get punched out of the sparse image file
+echo "$img $dir ext4 loop,discard,nofail 0 2" >> /etc/fstab
+systemctl daemon-reload
+mount "$dir"
+cp -a "$dir.old/." "$dir/"
+
+# don't let docker start before the image is mounted, or it writes to /
+mkdir -p /etc/systemd/system/docker.service.d
+cat > /etc/systemd/system/docker.service.d/limit.conf <<EOF
+[Unit]
+RequiresMountsFor=$dir
+EOF
+systemctl daemon-reload
+systemctl start docker
+
+docker system df
+echo "Done. If your containers and images look right, run: sudo rm -rf $dir.old"
