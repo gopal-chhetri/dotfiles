@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+# Rofi menu for Bluetooth: toggle power, scan, and connect/disconnect devices.
+
+if bluetoothctl show | grep -q "Powered: yes"; then
+	toggle="󰂲  Disable Bluetooth"
+	scan="󰂰  Scan for devices"
+else
+	chosen=$(echo "󰂯  Enable Bluetooth" | rofi -dmenu -i -p "Bluetooth: ")
+	[ -n "$chosen" ] && bluetoothctl power on >/dev/null && exec "$0"
+	exit
+fi
+
+connected=$(bluetoothctl devices Connected)
+paired=$(bluetoothctl devices Paired)
+
+# Map display names back to MAC addresses; skip unnamed devices (name is just the MAC)
+declare -A macs
+device_list=""
+while read -r _ mac name; do
+	[ -z "$mac" ] || [ "$name" = "${mac//:/-}" ] || [ -n "${macs[$name]}" ] && continue
+	macs[$name]=$mac
+	if [[ "$connected" == *"$mac"* ]]; then
+		icon="󰂱"
+	elif [[ "$paired" == *"$mac"* ]]; then
+		icon="󰂯"
+	else
+		icon="󰂲"
+	fi
+	device_list+="$icon  $name"$'\n'
+done < <(bluetoothctl devices)
+
+chosen=$(echo -e "$toggle\n$scan\n${device_list%$'\n'}" | rofi -dmenu -i -selected-row 2 -p "Bluetooth: ")
+[ -z "$chosen" ] && exit
+name="${chosen:3}"
+mac="${macs[$name]:-}"
+
+if [ "$chosen" = "$toggle" ]; then
+	bluetoothctl power off >/dev/null
+elif [ "$chosen" = "$scan" ]; then
+	notify-send "Scanning for Bluetooth devices..."
+	bluetoothctl --timeout 10 scan on >/dev/null
+	exec "$0"
+elif [ -z "$mac" ]; then
+	exit
+elif [[ "$connected" == *"$mac"* ]]; then
+	bluetoothctl disconnect "$mac" >/dev/null && notify-send "Disconnected" "\"$name\""
+else
+	# shortcut: pairs with bluetoothctl's default agent, so devices needing a PIN fail; use `bluetoothctl` by hand for those
+	if [[ "$paired" != *"$mac"* ]]; then
+		bluetoothctl pair "$mac" >/dev/null && bluetoothctl trust "$mac" >/dev/null
+	fi
+	if bluetoothctl connect "$mac" | grep -q "successful"; then
+		notify-send "Connection Established" "You are now connected to \"$name\"."
+	else
+		notify-send "Connection Failed" "Could not connect to \"$name\"."
+	fi
+fi

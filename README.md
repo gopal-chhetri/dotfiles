@@ -26,7 +26,7 @@ stow -D i3       # unlink
 | `zsh`, `p10k_zsh` | `~/.zshrc`, `~/.p10k.zsh` |
 | `nvidia-settings` | `~/.nvidia-settings-rc` |
 | `screenlayout` | `~/.screenlayout` |
-| `powermenu`, `volume`, `wifimenu` | `~/.local/bin` |
+| `powermenu`, `volume`, `wifimenu`, `bluetoothmenu` | `~/.local/bin` |
 | `cleanup` | `~/.local/bin`, `~/.config/systemd/user` |
 
 ## System packages (not for plain `stow`)
